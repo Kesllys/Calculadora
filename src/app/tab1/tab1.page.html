@@ -32,7 +32,7 @@
   </ion-item>
   <ion-item>
     <ion-button (click)="maior()" size="large">Maior</ion-button>
-    <ion-button size="large">Menor</ion-button>
+    <ion-button (click)="menor()" size="large">Menor</ion-button>
   </ion-item>
   <ion-item>
     <ion-label>Resultado: </ion-label>
@@ -40,5 +40,6 @@
   </ion-item>
   <ion-item>
     <ion-label>Conta: </ion-label>
+    <ion-label>{{conta}}</ion-label>
   </ion-item>
 </ion-content>
