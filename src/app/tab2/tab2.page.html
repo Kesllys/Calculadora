@@ -1,17 +1,64 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Calculadora Normal
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-item>
+    <ion-label position="floating">Operação: </ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Resultado: </ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button color="danger" size="small">MC</ion-button>
+    <ion-button color="danger" size="small">MR</ion-button>
+    <ion-button color="danger" size="small">M+</ion-button>
+    <ion-button color="danger" size="small">M-</ion-button>
+    <ion-button color="danger" size="small">MS</ion-button>
+  </ion-item>
+  <ion-col>
+  <ion-item>
+    <ion-button color="danger" size="default">%</ion-button>
+    <ion-button color="danger" size="default">CE</ion-button>
+    <ion-button color="danger" size="default">*</ion-button>
+    <ion-button color="danger" size="default"><ion-icon name="backspace-outline"></ion-icon></ion-button>
+  </ion-item>
+</ion-col>
+  <ion-item>
+    <ion-button color="danger" size="default">¹/x</ion-button>
+    <ion-button color="danger" size="default">x²</ion-button>
+    <ion-button color="danger" size="default">²√x</ion-button>
+    <ion-button color="danger" size="default">÷</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button size="default">7</ion-button>
+    <ion-button size="default">8</ion-button>
+    <ion-button size="default">9</ion-button>
+    <ion-button color="danger" size="default">X</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button size="default">4</ion-button>
+    <ion-button size="default">5</ion-button>
+    <ion-button size="default">6</ion-button>
+    <ion-button color="danger" size="default">-</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button size="default">1</ion-button>
+    <ion-button size="default">2</ion-button>
+    <ion-button size="default">3</ion-button>
+    <ion-button color="danger" size="default">+</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button  size="default">+/-</ion-button>
+    <ion-button  size="default">0</ion-button>
+    <ion-button  size="default">,</ion-button>
+    <ion-button  color="danger" size="default">=</ion-button>
+  </ion-item>
 </ion-content>
