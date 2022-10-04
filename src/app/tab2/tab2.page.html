@@ -7,14 +7,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-item>
     <ion-label position="floating">Operação: </ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="operacao"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Resultado: </ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="resultado">{{resultado}}</ion-input>
   </ion-item>
   <ion-item>
     <ion-button color="danger" size="small">MC</ion-button>
@@ -26,39 +25,39 @@
   <ion-col>
   <ion-item>
     <ion-button color="danger" size="default">%</ion-button>
-    <ion-button color="danger" size="default">CE</ion-button>
-    <ion-button color="danger" size="default">*</ion-button>
-    <ion-button color="danger" size="default"><ion-icon name="backspace-outline"></ion-icon></ion-button>
+    <ion-button color="danger" size="default" (click)="limparOperacao()" >CE</ion-button>
+    <ion-button color="danger" size="default" (click)="limparMemoria()" >C</ion-button>
+    <ion-button color="danger" size="default" (click)="apagarCaracter()" ><ion-icon name="backspace-outline"></ion-icon></ion-button>
   </ion-item>
 </ion-col>
   <ion-item>
-    <ion-button color="danger" size="default">¹/x</ion-button>
-    <ion-button color="danger" size="default">x²</ion-button>
-    <ion-button color="danger" size="default">²√x</ion-button>
-    <ion-button color="danger" size="default">÷</ion-button>
+    <ion-button color="danger" size="default" (click)="adicionarValor('¹/x')">¹/x</ion-button>
+    <ion-button color="danger" size="default" (click)="adicionarValor('x²')">x²</ion-button>
+    <ion-button color="danger" size="default" (click)="adicionarValor('²√x')">²√x</ion-button>
+    <ion-button color="danger" size="default" (click)="adicionarValor('/')">÷</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button size="default">7</ion-button>
-    <ion-button size="default">8</ion-button>
-    <ion-button size="default">9</ion-button>
-    <ion-button color="danger" size="default">X</ion-button>
+    <ion-button size="default" (click)="adicionarValor('7')" >7</ion-button>
+    <ion-button size="default" (click)="adicionarValor('8')" >8</ion-button>
+    <ion-button size="default" (click)="adicionarValor('9')" >9</ion-button>
+    <ion-button color="danger" (click)="adicionarValor('*')" size="default">X</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button size="default">4</ion-button>
-    <ion-button size="default">5</ion-button>
-    <ion-button size="default">6</ion-button>
-    <ion-button color="danger" size="default">-</ion-button>
+    <ion-button size="default" (click)="adicionarValor('4')" >4</ion-button>
+    <ion-button size="default" (click)="adicionarValor('5')" >5</ion-button>
+    <ion-button size="default" (click)="adicionarValor('6')" >6</ion-button>
+    <ion-button color="danger" size="default" (click)="adicionarValor('-')">-</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button size="default">1</ion-button>
-    <ion-button size="default">2</ion-button>
-    <ion-button size="default">3</ion-button>
-    <ion-button color="danger" size="default">+</ion-button>
+    <ion-button size="default" (click)="adicionarValor('1')" >1</ion-button>
+    <ion-button size="default" (click)="adicionarValor('2')" >2</ion-button>
+    <ion-button size="default" (click)="adicionarValor('3')" >3</ion-button>
+    <ion-button color="danger" size="default" (click)="adicionarValor('+')" >+</ion-button>
   </ion-item>
   <ion-item>
     <ion-button  size="default">+/-</ion-button>
-    <ion-button  size="default">0</ion-button>
-    <ion-button  size="default">,</ion-button>
+    <ion-button  size="default" (click)="adicionarValor('0')" >0</ion-button>
+    <ion-button  size="default" (click)="adicionarValor('.')" >,</ion-button>
     <ion-button  color="danger" size="default">=</ion-button>
   </ion-item>
 </ion-content>
