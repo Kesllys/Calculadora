@@ -13,7 +13,7 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating">Resultado: </ion-label>
-    <ion-input type="number" [(ngModel)]="resultado">{{resultado}}</ion-input>
+    <ion-input type="number" [(ngModel)]="Resultado"></ion-input>
   </ion-item>
   <ion-item>
     <ion-button color="danger" size="small">MC</ion-button>
@@ -58,6 +58,6 @@
     <ion-button  size="default">+/-</ion-button>
     <ion-button  size="default" (click)="adicionarValor('0')" >0</ion-button>
     <ion-button  size="default" (click)="adicionarValor('.')" >,</ion-button>
-    <ion-button  color="danger" size="default">=</ion-button>
+    <ion-button  color="danger" (click)="calcularOperacao()" size="default">=</ion-button>
   </ion-item>
 </ion-content>
