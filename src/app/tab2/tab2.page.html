@@ -13,14 +13,14 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating">Resultado: </ion-label>
-    <ion-input type="number" [(ngModel)]="Resultado"></ion-input>
+    <ion-label class="ion-text-right resultado">{{resultado}}</ion-label>
   </ion-item>
   <ion-item>
     <ion-button color="danger" size="small">MC</ion-button>
     <ion-button color="danger" size="small">MR</ion-button>
     <ion-button color="danger" size="small">M+</ion-button>
     <ion-button color="danger" size="small">M-</ion-button>
-    <ion-button color="danger" size="small">MS</ion-button>
+    <ion-button (click)="adicionarMemoria()" color="danger" size="small">MS</ion-button>
   </ion-item>
   <ion-col>
   <ion-item>

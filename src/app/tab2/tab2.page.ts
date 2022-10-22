@@ -1,6 +1,25 @@
 import { Component } from '@angular/core';
 import { evaluate } from 'mathjs';
+import { IMemoria } from '../models/IMemoria.model';
+import { AlertController } from '@ionic/angular';
 
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'example.component.html',
+})
+export class appTab2Page {
+  constructor(private alertController: AlertController) {}
+
+  async presentAlert(titulo: string, mensagem: string) {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      message: 'Opção Inválida',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+}
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -14,9 +33,32 @@ export class Tab2Page{
   caracteres = ['.', '/', '*', '+', '-'];
   ponto = ['.'];
 
+  memoria:IMemoria[] = [];
+
   constructor() {}
 
   ngOnInit() {}
+
+  adicionarMemoria(){
+    if (this.operacao != '' && this.resultado != ''){
+      const memoria: IMemoria = {
+        operacao: this.operacao,
+        resultado: Number(this.resultado),
+      };
+      this.memoria.push(memoria);
+      this.presentAlert('Aviso!', 'Nada para salvar!');
+      
+    }else if(this.operacao != '' && this.resultado == ''){
+      this.calcularOperacao();
+            const memoria: IMemoria = {
+        operacao: this.operacao,
+        resultado: Number(this.resultado),
+      };
+    }else{
+      
+    console.log(this.memoria);
+  }
+}
 
   calcularOperacao(){
     this.resultado = evaluate(this.operacao);
